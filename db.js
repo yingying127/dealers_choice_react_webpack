@@ -4,7 +4,10 @@ const sequelize = new Sequelize(process.env.DATABASE_URL || 'postgres://localhos
 const Pasta = sequelize.define('pasta', {
     name: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            notEmpty: true 
+        }
     }
 })
 
