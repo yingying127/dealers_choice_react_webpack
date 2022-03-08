@@ -5,6 +5,8 @@ const app = express();
 const faker = require('faker');
 const path = require('path');
 
+app.use('/dist', express.static(path.join(__dirname, 'dist')))
+
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
 
 app.post('/api/pasta', async(req, res, next) => {
