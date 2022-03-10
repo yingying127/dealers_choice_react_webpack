@@ -12,7 +12,9 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
 app.post('/api/pasta', async(req, res, next) => {
     try {
         const city = faker.address.city()
-        res.status(201).send(await city)
+        const name = `Try the pasta here: ${city}!`
+        const pasta = await Pasta.create({ name })
+        res.send(await pasta)
     }
     catch(ex) {
         next(ex)

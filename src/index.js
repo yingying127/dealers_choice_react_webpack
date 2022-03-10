@@ -19,24 +19,27 @@ class App extends React.Component {
         const pasta = [...this.state.pasta, pasti]
         this.setState({ pasta })
         console.log(pasta)
+
+        //this.state.tasks.push(task)
+        // this.setState({ tasks: this.state.tasks })
     }
     render() {
         const pasta = this.state.pasta;
         return (
             <div>
-                <h1>Sunsweet's Pasta Recommendations</h1>
-                <button onClick={ this.create }>City Loading</button>
+                <h1>Sunsweet's Pasta Recommendation in Random Cities</h1>
                 <div>
                     {
-                        pasta.map( pasti => {
+                        pasta.map(pasti => {
                             return (
-                                <p>
+                                <p key={pasti.id} value={pasti}>
                                     { pasti.name }
                                 </p>
+                                
                             )
                         })
                     }
-                    
+                    <button onClick={ this.create }>Click to Load Recommendations</button>
                 </div>
             </div>
         )

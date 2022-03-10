@@ -11,6 +11,10 @@ const Pasta = sequelize.define('pasta', {
     }
 })
 
+// City.generateRandom = function() {
+//     return this.create({ name: `${faker.address.city()}`})
+// }
+
 Pasta.createName = (name) => Pasta.create({ name })
 
 const syncAndSeed = async() => {
