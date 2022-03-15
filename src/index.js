@@ -18,13 +18,13 @@ class App extends React.Component {
         const pasti = (await axios.post('/api/pasta')).data
         const pasta = [...this.state.pasta, pasti]
         this.setState({ pasta })
-        console.log(pasta)
 
         //this.state.tasks.push(task)
         // this.setState({ tasks: this.state.tasks })
     }
     render() {
         const pasta = this.state.pasta;
+        // console.log(pasta)
         return (
             <div>
                 <h1>Sunsweet's Pasta Recommendation in Random Cities</h1>
